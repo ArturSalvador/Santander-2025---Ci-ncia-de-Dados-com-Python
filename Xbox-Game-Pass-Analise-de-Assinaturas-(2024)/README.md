@@ -1,63 +1,42 @@
-# 📊 Xbox Game Pass – Análise de Assinaturas (2024)
+# 📊 Xbox Game Pass: Data Analysis (2024)
 
-## 📌 Objetivo
-Este projeto analisa assinaturas do **Xbox Game Pass** no período de **15/01/2024 a 16/12/2024**, utilizando **296 registros**, onde cada linha representa um cliente.  
-O objetivo é avaliar faturamento, renovações automáticas e a adesão aos add-ons **EA Play Season Pass** e **Minecraft Season Pass**.
-
----
-
-## 🗂 Estrutura dos Dados
-Principais campos utilizados:
-- Plan  
-- Start Date  
-- Auto Renewal  
-- Subscription Price  
-- EA Play Season Pass  
-- EA Play Season Pass Price (Num)  
-- Minecraft Season Pass  
-- Minecraft Season Pass Price  
-- Total Value  
-
-Foi criada a coluna **EA Play Season Pass Price (Num)** para garantir tipagem numérica correta nas análises.
+## 📌 Visão Geral
+Análise estratégica de **296 registros** de assinaturas realizados entre **janeiro e dezembro de 2024**. O foco do projeto é mensurar a saúde financeira do serviço, o comportamento de retenção (churn/renovação) e o cross-sell de expansões.
 
 ---
 
-## 🎯 Perguntas de Negócio
-O dashboard responde às seguintes questões:
-
-1. Qual o faturamento total dos planos anuais?  
-2. Qual o faturamento total separado por assinaturas com e sem renovação automática?  
-3. Quantas assinaturas de **EA Play Season Pass** foram vendidas?  
-4. Quantas assinaturas de **Minecraft Season Pass** foram vendidas?  
+## 🎯 Key Performance Indicators (KPIs)
+O dashboard foi projetado para responder:
+* **Faturamento:** Qual o volume total gerado pelos planos anuais?
+* **Retenção:** Como a renovação automática impacta a receita?
+* **Cross-selling:** Qual a adesão aos add-ons *EA Play* e *Minecraft Season Pass*?
 
 ---
 
-## 📊 Componentes do Dashboard
-
-**Big Numbers**
-- Total Subscriptions EA Play Season Pass  
-- Total Subscriptions Minecraft Season Pass  
-
-**Gráfico de Barras**
-- Total de assinaturas do Xbox Game Pass  
-- Separado por **Auto Renewal (Yes / No)**  
-
-**Segmentadores de Dados**
-- Ano  
-- Trimestre  
-- Mês  
-
-Todos os indicadores são filtrados dinamicamente pelo período selecionado.
+## 🗂 Estrutura & Tratamento de Dados
+Para garantir a integridade da análise, os dados foram tipados e limpos, com destaque para:
+* **Conversão Numérica:** Criação do campo `EA Play Season Pass Price (Num)` para cálculos precisos.
+* **Métricas Consolidadas:** Cálculo do `Total Value` integrando plano base + add-ons.
+* **Granularidade:** Cada registro representa um cliente único em 2024.
 
 ---
 
-## 🧠 O que a análise permite avaliar
-- Impacto financeiro da renovação automática  
-- Adoção dos add-ons (EA Play e Minecraft)  
-- Comportamento das assinaturas ao longo do tempo  
+## 🖥️ O Dashboard
+### 📈 Visualizações Principais
+* **Big Numbers:** Contagem total de assinaturas por Add-on.
+* **Gráfico de Barras:** Comparativo de planos com vs. sem Renovação Automática.
+* **Segmentadores Dinâmicos:** Filtros temporais por Ano, Trimestre e Mês.
+
+### 🧠 Insights Extraídos
+* **Previsibilidade:** Avaliação do impacto financeiro da renovação automática.
+* **Engajamento:** Taxa de adoção de passes de temporada específicos.
+* **Sazonalidade:** Comportamento das assinaturas ao longo dos meses de 2024.
 
 ---
 
-## 🚧 Limitações
-Cada registro representa um cliente, não múltiplas transações.  
-Os dados referem-se apenas ao ano de 2024.
+## 🛠️ Tecnologias & Ferramentas
+* **Análise de Dados:** Python/Pandas ou Excel (Power Query).
+* **Visualização:** Power BI / Tableau / Looker Studio.
+
+---
+> **⚠️ Limitações:** Análise restrita ao ano de 2024; cada linha representa um usuário único (sem recorrência multi-transacional).
